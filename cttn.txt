@@ -1,0 +1,17 @@
+Project laravel ini saya install dengan Sail dimana terlebih dahulu perlu menjalankan docker
+.
+Laravel Sail merupakan antar muka berbasis command line yang dapat kita gunakan untuk kebutuhan development environtement di lokal laravel, laravel sail ini cocok untuk kita yang tidak memiliki lokal development seperti laradock,laragon,xampp,valet dan lain-lain.
+.
+Sebelum menjalankan project ini pastikan php dimatikan terlebih dahulu
+brew services stop httpd
+.
+Cara menjalankan project ini:
+- running docker sail-8.1/app
+- ketik ./vendor/bin/sail up
+.
+Jika membuat controller pada laravel biasa dapat dilakukan dengan => php artisan make:controller NameController
+maka, dengan menggunakan laravel sail kita melakukannya dengan
+=> ./vendor/bin/sail artisan make:controller NameController
+tapi,
+jalanin dulu ya sailnya dengan ./vendor/bin/sail up
+.
