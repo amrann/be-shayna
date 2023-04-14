@@ -15,4 +15,6 @@ maka, dengan menggunakan laravel sail kita melakukannya dengan
 tapi,
 jalanin dulu ya sailnya dengan ./vendor/bin/sail up
 .
-coba
+Database migrations itu sebuah fitur pada laravel yang memudahkan developer utk membuat table tanpa lewat phpmyadmin. Dengan fitur ini, developer dapat melacak aksi yang dilakukan pada db
+.
+sebenarnya gk wajib make laravel migrations
