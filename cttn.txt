@@ -19,4 +19,25 @@ Database migrations itu sebuah fitur pada laravel yang memudahkan developer utk 
 .
 sebenarnya gk wajib make laravel migrations
 .
-coba lagi
+Eloquent itu bisa dikatakan tools yang memudahkan programmer membuat query.
+.
+Laravel memiliki 2 cara dalam berinteraksi dengan db, yaitu dengan menggunakan Eloquent ORM (Object Relation Mapping) dan Query Builder. Kedua cara ini memiliki kelebihan masing-masing dimana Query Builder memiliki kecepatan execution lebih dibanding Eloquent, sedangkan dari segi syntax Eloquent lebih sederhana
+.
+Project ini, menggunakan laravel/ui untuk bagian authnya. Konfigurasinya seperti ini
+ - ./vendor/bin/sail composer require laravel/ui:^3.0 (menggunakan versi ^3.0 karena menggunakan php 8.1.7)
+ - ./vendor/bin/sail artisan ui vue --auth
+ - npm install && npm run dev
+ .
+Auth this project:
+email : coba@gmail.com
+pass : 123456789
+
+
+
+==================================================
+1.Source Code Admin HTML Template
+https://github.com/galpratama/shayna-admin-html
+2.Source Code CMS & API Laravel
+https://github.com/galpratama/shayna-backend-laravue
+3.API Response Formatter
+https://gist.github.com/galpratama/36ca7e903a73bc46acaa6fb810b7cd13

@@ -24,3 +24,7 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/halo', function () {
     return 'Haloo Mrann';
 });
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

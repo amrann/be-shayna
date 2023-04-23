@@ -1,4 +1,3 @@
-<!-- Header-->
 <header id="header" class="header">
   <div class="top-left">
     <div class="navbar-header">
@@ -21,4 +20,3 @@
     </div>
   </div>
 </header>
-<!-- /#header -->
