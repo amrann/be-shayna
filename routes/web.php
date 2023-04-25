@@ -25,6 +25,5 @@ Route::get('/halo', function () {
     return 'Haloo Mrann';
 });
 
-Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes();
+Auth::routes(['register' => false]); // menghilangkan halaman register
