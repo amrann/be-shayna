@@ -2,24 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\ProductController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
 // Route::get('/', 'DashboardController@index');
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index'])->name('berandaaja'); 
+// route ini dinamakan 'berandaaja'. Sehingga kita bisa memanggil cukup namanya aja utk ngelink ke route tersebut
+
 
 Route::get('/halo', function () {
     return 'Haloo Mrann';
@@ -27,3 +19,6 @@ Route::get('/halo', function () {
 
 // Auth::routes();
 Auth::routes(['register' => false]); // menghilangkan halaman register
+
+// Route::resource('products', 'ProductController');
+Route::resource('products', 'App\Http\Controllers\ProductController');
