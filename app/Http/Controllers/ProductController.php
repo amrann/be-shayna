@@ -12,16 +12,16 @@ class ProductController extends Controller
 {
   public function index()
   {
-      $items = Product::all();
+    $items = Product::all();
 
-      return view('pages.products.index')->with([
-          'items' => $items
-      ]);
+    return view('pages.products.index')->with([
+        'items' => $items
+    ]);
   }
 
   public function create()
   {
-      return view('pages.products.create');
+    return view('pages.products.create');
   }
 
   
@@ -45,15 +45,14 @@ class ProductController extends Controller
       //
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function edit($id)
   {
-      //
+    $item = Product::findOrFail($id);
+    // FindOrFail => ketika data gk ada maka langsung 404
+    // Find => ketika data gk ada maka error
+    return view('pages.products.edit')->with([
+      'item' => $item
+    ]);
   }
 
   /**
@@ -63,9 +62,15 @@ class ProductController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function update(ProductRequest $request, $id)
   {
-      //
+    $data = $request->all(); // Semua validasi dari request berada dalam ProductRequest yak
+    $data['slug'] = Str::slug($request->name); // terkait slug STR ini, bisa baca di dokumentasi laravelnya langsung
+
+    $item = Product::findOrFail($id);
+    $item->update($data);
+    
+    return redirect()->route('products.index');
   }
 
   /**
