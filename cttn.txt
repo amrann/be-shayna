@@ -31,6 +31,9 @@ Project ini, menggunakan laravel/ui untuk bagian authnya. Konfigurasinya seperti
 Auth this project:
 email : coba@gmail.com
 pass : 123456789
+.
+Project ini menggunakan fitur SoftDelete bawaan laravel. Jadi ketika salah satu item terhapus, maka sebenarnya item tersebut hanya dihilangkan dari tampilan saja, datanya tetap berada dalam db. Nah yang membedakan data yang terhapus/tidak dalam db adalah data yang terhapus akan memiliki value pada kolom deleted_at
+ 
 
 
 
