@@ -28,6 +28,9 @@ Project ini, menggunakan laravel/ui untuk bagian authnya. Konfigurasinya seperti
  - ./vendor/bin/sail artisan ui vue --auth
  - npm install && npm run dev
 .
+Project ini juga menggunakan form request sebagai validasi formnya
+ - ./vendor/bin/sail artisan make:request ProductGalleryRequest
+.
 Project ini menggunakan file storage bawaan laravel ya
  - ./vendor/bin/sail artisan storage:link (ini bertujuan storage yang ada dalam laravel kemudian akan dipublic sehingga bisa diakses umum)
 .

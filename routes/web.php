@@ -22,3 +22,4 @@ Auth::routes(['register' => false]); // menghilangkan halaman register
 
 // Route::resource('products', 'ProductController');
 Route::resource('products', 'App\Http\Controllers\ProductController');
+Route::resource('product-galleries', 'App\Http\Controllers\ProductGalleryController');
