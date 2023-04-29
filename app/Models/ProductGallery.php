@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class ProductGallery extends Model
 {
   use SoftDeletes;
 
   protected $fillable = [
-      'name', 'type', 'description', 'price', 'slug', 'quantity'
+    'product_id', 'photo', 'is_default'
   ];
 
   // variable ini diperuntukkan jika terdapat variable yang tidak ingin dimunculin
@@ -22,7 +22,13 @@ class Product extends Model
   // ==============================================================================
   // kumpulan relasi Product terhadap table yang lain
 
-  public function productGalleries() {
-    return $this->hasMany(ProductGallery::class, 'product_id');
+  public function product() {
+    return $this->belongsTo(Product::class, 'product_id', 'id');
+  }
+
+  // Assesor untuk mengganti url foto
+  public function getPhotoAttribute($value)
+  {
+    return url('storage/' . $value);
   }
 }
