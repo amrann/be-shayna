@@ -23,4 +23,33 @@ class ProductGalleryController extends Controller
       'items' => $items
     ]);
   }
+
+  public function create()
+  {
+    $products = Product::all();
+
+    return view('pages.product-galleries.create')->with([
+      'products' => $products
+    ]);
+  }
+
+  public function store(ProductGalleryRequest $request)
+  {
+    $data = $request->all(); // Semua validasi dari request berada dalam ProductRequest yak
+
+    $data['photo'] = $request->file('photo')->store(
+      'assets/product', 'public'
+    );
+
+    ProductGallery::create($data);
+    return redirect()->route('product-galleries.index');
+  }
+
+  public function destroy($id)
+  {
+    $item = ProductGallery::findOrFail($id);
+    $item->delete();
+
+    return redirect()->route('product-galleries.index');
+  }
 }
