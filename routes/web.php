@@ -20,6 +20,9 @@ Route::get('/halo', function () {
 // Auth::routes();
 Auth::routes(['register' => false]); // menghilangkan halaman register
 
+
+Route::get('products/{id}/gallery', [ProductController::class, 'gallery'])
+    ->name('products.gallery');
 // Route::resource('products', 'ProductController');
 Route::resource('products', 'App\Http\Controllers\ProductController');
 Route::resource('product-galleries', 'App\Http\Controllers\ProductGalleryController');

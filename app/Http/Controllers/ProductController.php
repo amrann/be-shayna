@@ -7,6 +7,7 @@ use Illuminate\Support\Str; // Fungsi helper yang dibawa Laravel
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\ProductGallery;
 
 class ProductController extends Controller
 {
@@ -77,5 +78,18 @@ class ProductController extends Controller
     $item->delete();
 
     return redirect()->route('products.index');
+  }
+
+  public function gallery(Request $request, $id)
+  {
+    $products = Product::findOrFail($id);
+    $items = ProductGallery::with('product')
+      ->where('product_id', $id)
+      ->get();
+
+    return view('pages.products.gallery')->with([
+      'products' => $products,
+      'items' => $items
+    ]);
   }
 }
