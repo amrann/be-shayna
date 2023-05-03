@@ -77,6 +77,9 @@ class ProductController extends Controller
     $item = Product::findOrFail($id);
     $item->delete();
 
+    // ketika produk dihapus, gambar yang berelasi dgn produk ikut juga terhapus
+    ProductGallery::where('product_id', $id)->delete();
+
     return redirect()->route('products.index');
   }
 
