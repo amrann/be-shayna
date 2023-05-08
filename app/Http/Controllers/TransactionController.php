@@ -45,34 +45,28 @@ class TransactionController extends Controller {
   {
     // memanggil relasi transacti details dan product
     $item = Transaction::with('fundetails.funproduct')->findOrFail($id);
-    // var_dump($item);
 
     return view('pages.transactions.show')->with([
       'item' => $item
     ]);
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function edit($id)
   {
-      //
+    $item = Transaction::findOrFail($id);
+
+    return view('pages.transactions.edit')->with([
+      'item' => $item
+    ]);
   }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function update(Request $request, $id)
   {
-      //
+    $data = $request->all();
+    $item = Transaction::findOrFail($id);
+    $item->update($data);
+
+    return redirect()->route('transactions.index');
   }
 
   /**
