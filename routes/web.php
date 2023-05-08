@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -26,4 +27,7 @@ Route::get('products/{id}/gallery', [ProductController::class, 'gallery'])
 // Route::resource('products', 'ProductController');
 Route::resource('products', 'App\Http\Controllers\ProductController');
 Route::resource('product-galleries', 'App\Http\Controllers\ProductGalleryController');
+
+Route::get('transactions/{id}/set-status', [TransactionController::class, 'setStatus'])
+    ->name('transactions.status');
 Route::resource('transactions', 'App\Http\Controllers\TransactionController');

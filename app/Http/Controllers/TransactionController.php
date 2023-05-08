@@ -20,27 +20,6 @@ class TransactionController extends Controller {
     ]);
   }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function create()
-  {
-      //
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request)
-  {
-    //
-  }
-
   public function show($id)
   {
     // memanggil relasi transacti details dan product
@@ -79,4 +58,19 @@ class TransactionController extends Controller {
   {
       //
   }
+
+  public function setStatus(Request $request, $id)
+  {
+    $request->validate([
+      'status' => 'required|in:PENDING,SUCCESS,FAILED'
+    ]);
+
+    $item = Transaction::findOrFail($id);
+    $item->transaction_status = $request->status;
+
+    $item->save();
+
+    return redirect()->route('transactions.index');
+  }
+
 }
