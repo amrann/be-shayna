@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transaction extends Model
 {
-  use HasFactory;
+  use SoftDeletes;
 
   protected $fillable = [
     'uuid', 'name', 'email', 'number', 'address', 'transaction_total', 'transaction_status'
