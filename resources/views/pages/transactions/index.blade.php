@@ -51,7 +51,7 @@
                           <a href="{{ route('transactions.status', $item->id) }}?status=FAILED" class="btn btn-warning btn-sm">
                             <i class="fa fa-times"></i>
                           </a>
-                        @endif
+                        @endif --}}
                         <a href="#mymodal"
                           data-remote="{{ route('transactions.show', $item->id) }}"
                           data-toggle="modal"
@@ -71,7 +71,7 @@
                           <button class="btn btn-danger btn-sm">
                             <i class="fa fa-trash"></i>
                           </button>
-                        </form> --}}
+                        </form>
                       </td>
                     </tr>
                   @empty
