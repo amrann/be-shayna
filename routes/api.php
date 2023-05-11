@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\APIProductController;
+use App\Http\Controllers\APICheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::get('products', [APIProductController::class, 'all']);
 Route::get('/products', [APIProductController::class, 'all']);
+Route::post('checkout', [APICheckoutController::class, 'checkout']);
 // Route::get('/products', 'App\Http\Controllers\API\APIProductController@all');
