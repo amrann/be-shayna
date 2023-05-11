@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\APIProductController;
 use App\Http\Controllers\APICheckoutController;
+use App\Http\Controllers\APITransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::get('products', [APIProductController::class, 'all']);
-Route::get('/products', [APIProductController::class, 'all']);
-Route::post('checkout', [APICheckoutController::class, 'checkout']);
-// Route::get('/products', 'App\Http\Controllers\API\APIProductController@all');
+Route::get('products', [APIProductController::class, 'all']);
+Route::post('checkout', [APICheckoutController::class, 'checkout']); // http://0.0.0.0/api/checkout
+Route::get('transactions/{id}', [APITransactionController::class, 'get']); // http://0.0.0.0/api/transactions/7
