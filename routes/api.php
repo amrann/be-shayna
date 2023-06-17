@@ -23,6 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::get('products', [APIProductController::class, 'all']);
-Route::get('products', [APIProductController::class, 'all']);
-Route::post('checkout', [APICheckoutController::class, 'checkout']); // http://0.0.0.0/api/checkout
-Route::get('transactions/{id}', [APITransactionController::class, 'get']); // http://0.0.0.0/api/transactions/7
+Route::get('v1/products', [APIProductController::class, 'all']);
+Route::post('v1/checkout', [APICheckoutController::class, 'checkout']); // http://0.0.0.0/api/checkout
+Route::get('v1/transactions/{id}', [APITransactionController::class, 'get']); // http://0.0.0.0/api/transactions/7
