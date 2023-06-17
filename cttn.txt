@@ -43,6 +43,8 @@ Project ini menggunakan fitur SoftDelete bawaan laravel. Jadi ketika salah satu 
 
 coba ini na
 
+coba lagiii
+
 ==================================================
 1.Source Code Admin HTML Template
 https://github.com/galpratama/shayna-admin-html
